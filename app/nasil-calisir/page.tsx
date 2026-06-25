@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Search, MessageCircle, Target, UserCheck, FileCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { Search, MessageCircle, Target, Sparkles, Award, ShieldCheck, ArrowRight } from 'lucide-react';
 import CTABanner from '@/components/marketing/CTABanner';
 import PhoneMockup from '@/components/marketing/PhoneMockup';
 
@@ -50,21 +50,21 @@ export default function HowItWorksPage() {
 
   const coachSteps = [
     {
-      icon: FileCheck,
-      title: 'Başvuru Yap',
-      description: 'Basit başvuru formunu doldur, sertifikalarını yükle, uzmanlık alanlarını belirt.',
+      icon: Sparkles,
+      title: 'Profilini Oluştur',
+      description: 'Uzmanlık alanlarını seç, özgeçmişini ve hizmet detaylarını girerek profilini hemen hazırla.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: UserCheck,
-      title: 'Onay Al',
-      description: 'Ekibimiz sertifikalarını doğrular, profilini inceler ve 48 saat içinde onaylar.',
-      color: 'from-purple-500 to-pink-500',
+      icon: Award,
+      title: "Premium'a Geç",
+      description: 'Profilini yayına almak ve danışan kazanmaya başlamak için Premium üyeliğini aktif et.',
+      color: 'from-amber-500 to-orange-500',
     },
     {
-      icon: Sparkles,
-      title: 'Profil Oluştur',
-      description: 'Detaylı profilini oluştur, galeri ekle, uzmanlıklarını sergile ve müşteri kazanmaya başla.',
+      icon: ShieldCheck,
+      title: 'Onaylı Profil Ol',
+      description: "Varsa uzmanlık sertifikalarını yükleyerek 'Onaylı Profil' rozeti kazan ve güvenilirliğini artır.",
       color: 'from-primary-500 to-green-500',
     },
   ];
