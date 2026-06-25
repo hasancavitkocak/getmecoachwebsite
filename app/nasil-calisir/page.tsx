@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Search, MessageCircle, Target, UserCheck, FileCheck, Sparkles, ArrowRight } from 'lucide-react';
 import CTABanner from '@/components/marketing/CTABanner';
+import PhoneMockup from '@/components/marketing/PhoneMockup';
 
 export const metadata: Metadata = {
   title: 'Nasıl Çalışır? | GetMeCoach',
@@ -140,13 +141,9 @@ export default function HowItWorksPage() {
                   </ul>
                 </div>
 
-                {/* Image Placeholder */}
-                <div className="flex-1">
-                  <div className="relative aspect-[4/3] bg-gradient-to-br from-dark-100 to-dark-200 dark:from-dark-800 dark:to-dark-900 rounded-3xl shadow-2xl flex items-center justify-center">
-                    <div className="text-dark-400 dark:text-dark-600 text-lg">
-                      {step.title} Screenshot
-                    </div>
-                  </div>
+                {/* Image / Phone Mockup */}
+                <div className="flex-1 flex justify-center w-full">
+                  <PhoneMockup image={step.image} title={step.title} />
                 </div>
               </div>
             ))}
