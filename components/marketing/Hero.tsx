@@ -68,31 +68,31 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-4 mb-12"
+              className="flex gap-3 sm:gap-4 mb-12"
             >
               <Link
                 href="/indir"
-                className="flex items-center gap-3 px-6 py-4 bg-white text-dark-900 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all group"
+                className="flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 sm:gap-3 px-3 py-2.5 sm:px-6 sm:py-4 bg-white text-dark-900 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all group"
               >
-                <div className="w-10 h-10 bg-dark-900 rounded-xl flex items-center justify-center">
-                  <Apple className="w-6 h-6 text-white" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-dark-900 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Apple className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-dark-600">İndir</div>
-                  <div className="text-lg font-semibold">App Store</div>
+                  <div className="text-[9px] sm:text-xs text-dark-600 leading-none mb-0.5">İndir</div>
+                  <div className="text-xs sm:text-lg font-semibold leading-tight whitespace-nowrap">App Store</div>
                 </div>
               </Link>
 
               <Link
                 href="/indir"
-                className="flex items-center gap-3 px-6 py-4 bg-white text-dark-900 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all group"
+                className="flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 sm:gap-3 px-3 py-2.5 sm:px-6 sm:py-4 bg-white text-dark-900 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all group"
               >
-                <div className="w-10 h-10 bg-dark-900 rounded-xl flex items-center justify-center">
-                  <PlayCircle className="w-6 h-6 text-white" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-dark-900 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                  <PlayCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-dark-600">İndir</div>
-                  <div className="text-lg font-semibold">Google Play</div>
+                  <div className="text-[9px] sm:text-xs text-dark-600 leading-none mb-0.5">İndir</div>
+                  <div className="text-xs sm:text-lg font-semibold leading-tight whitespace-nowrap">Google Play</div>
                 </div>
               </Link>
             </motion.div>
@@ -119,21 +119,23 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Phone Mockup */}
+          {/* Right Content - Phone Mockup (Responsive & Modern) */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
+            className="relative flex justify-center mt-12 lg:mt-0 lg:block"
           >
             <div className="relative z-10">
-              {/* Phone Frame */}
-              <div className="relative mx-auto w-[340px] h-[700px] bg-dark-800 rounded-[3rem] p-4 shadow-2xl border-8 border-dark-900">
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-dark-900 rounded-b-3xl z-20" />
+              {/* Phone Frame - iPhone Pro style with very thin bezels & dynamic island */}
+              <div className="relative mx-auto w-[280px] h-[570px] sm:w-[320px] sm:h-[660px] lg:w-[340px] lg:h-[700px] bg-dark-950 dark:bg-dark-900 rounded-[2.5rem] sm:rounded-[3rem] p-1.5 sm:p-2 shadow-2xl ring-4 ring-primary-500/5 dark:ring-dark-800/20 border border-white/10 dark:border-dark-700/30">
+                {/* Dynamic Island */}
+                <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-4 bg-black rounded-full z-20 shadow-inner flex items-center justify-center">
+                  <div className="absolute right-3 w-1.5 h-1.5 bg-neutral-900 rounded-full border-[0.5px] border-white/5" />
+                </div>
                 
                 {/* Screen */}
-                <div className="relative w-full h-full bg-gradient-to-br from-primary-500/20 to-purple-500/20 rounded-[2.5rem] overflow-hidden">
+                <div className="relative w-full h-full bg-gradient-to-br from-primary-500/20 to-purple-500/20 rounded-[2.2rem] sm:rounded-[2.6rem] overflow-hidden">
                   {/* App Screenshot */}
                   <Image
                     src="/images/app-screenshot.png"
@@ -160,16 +162,16 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Elements */}
+              {/* Floating Elements (hidden on small mobile to avoid layout issues) */}
               <motion.div
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-10 -left-10 w-24 h-24 bg-primary-500/20 rounded-full blur-2xl"
+                className="absolute -top-6 -left-6 sm:-top-10 sm:-left-10 w-16 h-16 sm:w-24 sm:h-24 bg-primary-500/20 rounded-full blur-2xl pointer-events-none"
               />
               <motion.div
                 animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl"
+                className="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 w-20 h-20 sm:w-32 sm:h-32 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"
               />
             </div>
           </motion.div>
